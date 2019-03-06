@@ -177,7 +177,7 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><img src="http://images0.cnitblog.com/cnitblog_com/lily/1972/o_OOBase.gif" alt=""></p>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -186,7 +186,109 @@ var themeMenus = {};
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="1，C-面向对象的三大特征"><a href="#1，C-面向对象的三大特征" class="headerlink" title="1，C++面向对象的三大特征?"></a>1，C++面向对象的三大特征?</h2><p><img src="http://images0.cnitblog.com/cnitblog_com/lily/1972/o_OOBase.gif" alt=""></p>
+<hr>
+<ol>
+<li>封装：将客观事物封装成抽象的类，隐藏了类的实现细节，同时可以为其添加访问权限控制，保护数据安全，类的用户只能使用接口而不能访问实现部分，由类的设计者考虑其工作细节，也方便了代码的复用。</li>
+<li>继承：继承可以使用现有类的一切功能同时也可以在不重新编写原有类的基础上对其进行扩展，继承的过程是一般到特殊的过程，可以通过继承和组合来实现。广义上的继承分为三大类：实现继承：使用基类的属性方法而无需额外编码；接口继承：仅使用基类的属性方法和名称，而具体实现需要自己完成；可视继承：子窗体使用父窗体的外观实现代码的过程</li>
+<li>多态：编译时多态通过函数重载和运算符重载来实现，运行时多态只要由函数覆盖来实现，需满足两个条件：基类中必须包含虚函数，并且派生类中一定要对基类中的虚函数进行重写；通过基类对象的指针或者引用调用虚函数</li>
+</ol>
+<h2 id="2，数组和指针的区别"><a href="#2，数组和指针的区别" class="headerlink" title="2，数组和指针的区别"></a>2，数组和指针的区别</h2><p>指针指向内存地址，大小通常由程序员分配，而数组是由系统分配的连续地址空间；</p>
+<h2 id="3，介绍一下STL常用的容器"><a href="#3，介绍一下STL常用的容器" class="headerlink" title="3，介绍一下STL常用的容器"></a>3，介绍一下STL常用的容器</h2><p>c++STL中有两种类型的容器：顺序容器和关联容器 顺序容器主要有：vector、list、deque等。其中vector表示一段连续的内存地址，基于数组的实现，list表示非连续的内存，基于链表实现。deque与vector类似，但是对于首元素提供删除和插入的双向支持。 关联容器主要有map和set。map是key-value形式的，set是单值。map和set只能存放唯一的key值，multimap和multiset可以存放多个相同的key值。</p>
+<h2 id="4，介绍一下虚函数"><a href="#4，介绍一下虚函数" class="headerlink" title="4，介绍一下虚函数"></a>4，介绍一下虚函数</h2><p>虚函数主要用于实现多态，有纯虚函数和非纯虚函数两种。纯虚函数需要子类重写父类的函数。虚函数的存在使得类不能实例化，虚函数以函数指针的形式存放在虚函数表中，初始时放着父类的虚函数地址，若子类重写了父类的函数，则对应位置被覆盖为相应子类函数的地址</p>
+<h2 id="5，说说动态内存分配"><a href="#5，说说动态内存分配" class="headerlink" title="5，说说动态内存分配"></a>5，说说动态内存分配</h2><p>普通变量创建是存放在栈区的，由系统统一管理，用完自动释放，而我们用new或者malloc申请的内存是存放在堆区的，需要用delete或free相应的进行释放，防止内存泄漏。</p>
+<h2 id="6，请你谈谈深copy和浅copy"><a href="#6，请你谈谈深copy和浅copy" class="headerlink" title="6，请你谈谈深copy和浅copy"></a>6，请你谈谈深copy和浅copy</h2><p>浅复制是单纯的指针赋值，使得两个指针指向同一处空间，容易造成二次释放，深复制用strcpy，memcpy来拷贝指向的空间内容。</p>
+<h2 id="7，C-和C的区别"><a href="#7，C-和C的区别" class="headerlink" title="7，C++和C的区别"></a>7，C++和C的区别</h2><p>C++是面向对象的编程语言，C是面向过程的语言，C++是C的一个扩展，完全支持C的语法，另外在其之上增加了面向对象的特性。</p>
+<h2 id="8，手写strcpy"><a href="#8，手写strcpy" class="headerlink" title="8，手写strcpy"></a>8，手写strcpy</h2><pre><code>char *strcpy(char *dst,const char *src){
+    if(dst == NULL || src == NULL)
+        throw &quot;Null Argument!&quot;;
+    char *ret = dst;
+    while((*dst++=*src++) != &apos;\0&apos;);
+    return ret;
+}
+</code></pre><h2 id="9-手写memcpy"><a href="#9-手写memcpy" class="headerlink" title="9,手写memcpy"></a>9,手写memcpy</h2><pre><code>void* memcpy(void* dest, void* source, size_t count){
+void* ret = dest;
+    if (dest &lt;= source || dest &gt;= (source + count)){//无地址重叠
+         while (count--)  *dest++ = *source++;
+     }else{
+        //有地址重叠从高地址往低地址复制
+        dest += count - 1;
+        source += count - 1;
+        while (count--) *dest-- = *source--;
+     }
+return ret;
+}
+</code></pre><h2 id="10，手写memset"><a href="#10，手写memset" class="headerlink" title="10，手写memset"></a>10，手写memset</h2><pre><code>void *memset(void *s,int c,size_t count){
+    char *xs = s;
+    while (count--)
+        *xs++ = c;
+    return s;
+}
+</code></pre><h2 id="11，哪些函数不能被声明成virture"><a href="#11，哪些函数不能被声明成virture" class="headerlink" title="11，哪些函数不能被声明成virture"></a>11，哪些函数不能被声明成virture</h2><p>不能被继承的函数，不能被重写的函数</p>
+<ol>
+<li>普通函数：普通函数不属于成员函数，不能被继承 只能被重载，不能被重写，因此声明为虚函数没有意义。</li>
+<li>友元函数：不属于类的成员函数，不能被继承；</li>
+<li>构造函数：虚函数是为了实现多态，多态是通过基类指针指向子类对象实现的，在构造函数之前并没有对象产生，因此无法使用多态性；</li>
+<li>内联成员函数：内联函数是在编译时展开的，而虚函数实现的多态是运行时绑定的；</li>
+<li>静态成员函数：理论上是可以被继承的，但是静态成员函数是编译时确定的，无法动态绑定，不支持多态。<h2 id="12，extern-C的作用"><a href="#12，extern-C的作用" class="headerlink" title="12，extern C的作用"></a>12，extern C的作用</h2>为了正确实现C++代码调用C语言代码，告诉编译器这部分代码按照C语言进行编译，而不是C++；<h2 id="13，栈有哪些使用场景"><a href="#13，栈有哪些使用场景" class="headerlink" title="13，栈有哪些使用场景"></a>13，栈有哪些使用场景</h2></li>
+<li>逆序输出，    栈最大的特点是先进后出，所以逆序输出是栈经常用到的一个应用场景。首先把所有元素依次入栈，然后把所有元素出栈并输出，这样就实现了逆序输出。</li>
+<li>语法检查，符号成对出现，凡是遇到括号的前半部分，即把这个元素入栈，凡是遇到括号的后半部分就比对栈顶元素是否该元素相匹配，如果匹配，则前半部分出栈，否则就是匹配出错</li>
+<li>数制转换，将十进制的数转换为2-9的任意进制的数，比如100的八进制，100首先除以8商12余4,4首先进栈，然后12除以8商1余4，第二个余数4进栈，接着1除以8，商0余1，第三个余数1进栈，最后将三个余数出栈，就得到了100的八进制数144。<h2 id="14，浮点数如何判断相等"><a href="#14，浮点数如何判断相等" class="headerlink" title="14，浮点数如何判断相等"></a>14，浮点数如何判断相等</h2> if (fabs(f1 - f2) &lt; 预先指定的精度）{<pre><code>...
+</code></pre> }<br> #define EPSILON 0.000001 //根据精度需要<br> if (fabs(fa - fb) &lt; EPSILON){<pre><code>printf(&quot;fa&lt;fb\n&quot;);
+</code></pre> }<br>数学函数:fabs()<br>原型：extern float fabs(float x);<br>用法：#include &lt;math.h&gt;<br>功能：求浮点数x的绝对值<br>说明：计算|x|, 当x不为负时返回x，否则返回-x<h2 id="15，C-中栈内存和堆内存的区别"><a href="#15，C-中栈内存和堆内存的区别" class="headerlink" title="15，C++中栈内存和堆内存的区别"></a>15，C++中栈内存和堆内存的区别</h2></li>
+</ol>
+<ol>
+<li>栈内存：由程序自动向操作系统申请分配以及回收，速度快，使用方便，但程序员无法控制。若分配失败，则提示栈溢出错误。注意，const局部变量也储存在栈区内，栈区向地址减小的方向增长。</li>
+<li>堆内存：程序员向操作系统申请一块内存，当系统收到程序的申请时，会遍历一个记录空闲内存地址的链表，寻找第一个空间大于所申请空间的堆结点，然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序。分配的速度较慢，地址不连续，容易碎片化。此外，由程序员申请，同时也必须由程序员负责销毁，否则则导致内存泄露。<h2 id="16，在C中如何调用C"><a href="#16，在C中如何调用C" class="headerlink" title="16，在C中如何调用C++"></a>16，在C中如何调用C++</h2></li>
+</ol>
+<p>普通函数</p>
+<pre><code>// C++ Code
+extern &quot;C&quot; int foo( int x );
+int foo( int x )
+{
+    //...
+}
+</code></pre><p>这样,编译器会将foo函数编译成类似_foo符号，而不会编译成类似_foo_int符号<br>则C可以这样调用C++函数</p>
+<pre><code>// C Code
+int foo( int x );
+void cc( int x )
+{
+    foo( x );
+    //...
+}
+</code></pre><p>如果想调用重载的C++函数，则须封装单独的接口共C调用。<br>    // C++ Code<br>    void foo( int x );<br>    void foo( float x );</p>
+<pre><code>extern &quot;C&quot; void foo_i( int x )
+{
+    foo( x );
+}
+extern &quot;C&quot; void foo_f( float x )
+{
+     foo( x );
+}
+</code></pre><p>则C中可这样调用</p>
+<pre><code>// C Code
+void foo_i( int x );
+void foo_f( float x );
+void ccc( int x1, float x2 )
+{
+    foo_i( x1 );
+    foo_f( x2 );
+    // ...
+} 
+</code></pre><p>C中想调用C++中的成员函数（包括虚函数），则需要提供一个简单的包装（wrapper）。<br>     // C++ code:</p>
+<pre><code>class C
+{
+     ...
+    virtual double f(int);
+};
 
+extern &quot;C&quot; double call_C_f(C* p, int i) // wrapper function
+{
+    return p-&gt;f(i);
+}
+</code></pre><p>然后，你就可以这样调用 C::f()：<br>    //C code<br>    double call_C_f(struct C<em> p, int i);//声明<br>    void ccc(struct C</em> p, int i)<br>    {<br>        double d=call_C_f(p,i);<br>        …<br>    }</p>
+<h2 id="17，一篇文章中统计频率最高的前十单词"><a href="#17，一篇文章中统计频率最高的前十单词" class="headerlink" title="17，一篇文章中统计频率最高的前十单词"></a>17，一篇文章中统计频率最高的前十单词</h2><p>map+size为10的最小堆，从第十一个依次和堆顶元素进行比较，然后调整堆结构（具体实现不清楚，网上说字典树也是可以的）</p>
+<h2 id="18，"><a href="#18，" class="headerlink" title="18，"></a>18，</h2>
       
     </div>
  
