@@ -295,8 +295,19 @@ void ccc(struct C* p, int i)
 <li>C++中分为五个存储区：栈，堆(malloc)，自由存储区(new)，全局/静态存储区，常量存储区</li>
 <li>自由存储是C++中通过new与delete动态分配和释放对象的抽象概念，而堆（heap）是C语言和操作系统的术语，是操作系统维护的一块动态分配内存。</li>
 <li>new所申请的内存区域在C++中称为自由存储区。藉由堆实现的自由存储，可以说new所申请的内存区域在堆上。</li>
-<li>堆与自由存储区还是有区别的，它们并非等价。</li>
+<li>堆与自由存储区还是有区别的，它们并非等价。<h2 id="21，说说const和static"><a href="#21，说说const和static" class="headerlink" title="21，说说const和static"></a>21，说说const和static</h2>const修饰指针变量时，  </li>
 </ul>
+<ol>
+<li>只有一个const，如果const位于*的左侧，表示指针所指数据是常量，不能通过解引用修改其数值，指针本身是变量可以指向其他内存单元.  </li>
+</ol>
+<p><code>const double pi = 3.14;  double const *cptr = &amp;pi;</code>  cptr= &pj;  </p>
+<ol start="2">
+<li>只有一个const，如果const位于*的右侧，表示指针本身是常量，不能指向其他内存地址，指针所指的数据可以通过解引用修改，     </li>
+</ol>
+<p><code>int i = 0;int *const j = &amp;i;</code>  i = 1;  </p>
+<ol start="3">
+<li>两个const，*左右各一个，表示指针和指针所指数据都不能修改。</li>
+</ol>
 
       
     </div>
