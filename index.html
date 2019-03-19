@@ -224,11 +224,16 @@ return ret;
 <li>静态成员函数：理论上是可以被继承的，但是静态成员函数是编译时确定的，无法动态绑定，不支持多态。<h2 id="12，extern-C的作用"><a href="#12，extern-C的作用" class="headerlink" title="12，extern C的作用"></a>12，extern C的作用</h2>为了正确实现C++代码调用C语言代码，告诉编译器这部分代码按照C语言进行编译，而不是C++；<h2 id="13，栈有哪些使用场景"><a href="#13，栈有哪些使用场景" class="headerlink" title="13，栈有哪些使用场景"></a>13，栈有哪些使用场景</h2></li>
 <li>逆序输出，    栈最大的特点是先进后出，所以逆序输出是栈经常用到的一个应用场景。首先把所有元素依次入栈，然后把所有元素出栈并输出，这样就实现了逆序输出。</li>
 <li>语法检查，符号成对出现，凡是遇到括号的前半部分，即把这个元素入栈，凡是遇到括号的后半部分就比对栈顶元素是否该元素相匹配，如果匹配，则前半部分出栈，否则就是匹配出错</li>
-<li>数制转换，将十进制的数转换为2-9的任意进制的数，比如100的八进制，100首先除以8商12余4,4首先进栈，然后12除以8商1余4，第二个余数4进栈，接着1除以8，商0余1，第三个余数1进栈，最后将三个余数出栈，就得到了100的八进制数144。<h2 id="14，浮点数如何判断相等"><a href="#14，浮点数如何判断相等" class="headerlink" title="14，浮点数如何判断相等"></a>14，浮点数如何判断相等</h2> if (fabs(f1 - f2) &lt; 预先指定的精度）{<pre><code>...
-</code></pre> }<br> #define EPSILON 0.000001 //根据精度需要<br> if (fabs(fa - fb) &lt; EPSILON){<pre><code>printf(&quot;fa&lt;fb\n&quot;);
-</code></pre> }<br>数学函数:fabs()<br>原型：extern float fabs(float x);<br>用法：#include &lt;math.h&gt;<br>功能：求浮点数x的绝对值<br>说明：计算|x|, 当x不为负时返回x，否则返回-x<h2 id="15，C-中栈内存和堆内存的区别"><a href="#15，C-中栈内存和堆内存的区别" class="headerlink" title="15，C++中栈内存和堆内存的区别"></a>15，C++中栈内存和堆内存的区别</h2></li>
+<li><p>数制转换，将十进制的数转换为2-9的任意进制的数，比如100的八进制，100首先除以8商12余4,4首先进栈，然后12除以8商1余4，第二个余数4进栈，接着1除以8，商0余1，第三个余数1进栈，最后将三个余数出栈，就得到了100的八进制数144。</p>
+<h2 id="14，浮点数如何判断相等"><a href="#14，浮点数如何判断相等" class="headerlink" title="14，浮点数如何判断相等"></a>14，浮点数如何判断相等</h2><p> if (fabs(f1 - f2) &lt; 预先指定的精度）{</p>
+<pre><code>...
+</code></pre><p> }<br> #define EPSILON 0.000001 //根据精度需要<br> if (fabs(fa - fb) &lt; EPSILON){</p>
+<pre><code>printf(&quot;fa&lt;fb\n&quot;);
+</code></pre><p> }</p>
+</li>
 </ol>
-<ol>
+<p>数学函数:fabs()<br>原型：extern float fabs(float x);<br>用法：#include &lt;math.h&gt;<br>功能：求浮点数x的绝对值<br>说明：计算|x|, 当x不为负时返回x，否则返回-x</p>
+<h2 id="15，C-中栈内存和堆内存的区别"><a href="#15，C-中栈内存和堆内存的区别" class="headerlink" title="15，C++中栈内存和堆内存的区别"></a>15，C++中栈内存和堆内存的区别</h2><ol>
 <li>栈内存：由程序自动向操作系统申请分配以及回收，速度快，使用方便，但程序员无法控制。若分配失败，则提示栈溢出错误。注意，const局部变量也储存在栈区内，栈区向地址减小的方向增长。</li>
 <li>堆内存：程序员向操作系统申请一块内存，当系统收到程序的申请时，会遍历一个记录空闲内存地址的链表，寻找第一个空间大于所申请空间的堆结点，然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序。分配的速度较慢，地址不连续，容易碎片化。此外，由程序员申请，同时也必须由程序员负责销毁，否则会导致内存泄露。<h2 id="16，在C中如何调用C"><a href="#16，在C中如何调用C" class="headerlink" title="16，在C中如何调用C++"></a>16，在C中如何调用C++</h2></li>
 </ol>
@@ -247,8 +252,12 @@ void cc( int x )
     foo( x );
     //...
 }
-</code></pre><p>如果想调用重载的C++函数，则须封装单独的接口共C调用。<br>    // C++ Code<br>    void foo( int x );<br>    void foo( float x );</p>
-<pre><code>extern &quot;C&quot; void foo_i( int x )
+</code></pre><p>如果想调用重载的C++函数，则须封装单独的接口共C调用。</p>
+<pre><code>// C++ Code
+void foo( int x );
+void foo( float x );
+
+extern &quot;C&quot; void foo_i( int x )
 {
     foo( x );
 }
